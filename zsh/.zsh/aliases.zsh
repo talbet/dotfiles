@@ -5,6 +5,7 @@ alias ll="ls -lahF"
 alias "cd.."="cd ../"
 alias up="cd ../"
 alias k="k -h"
+alias be="bundle exec"
 
 # alias rmrf="rm -rf"
 # alias psef="ps -ef"

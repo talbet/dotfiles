@@ -39,4 +39,4 @@ cat << X0
 ᶘ ᵒᴥᵒᶅ
 X0
 ;;
-esac
+esac | lolcat

@@ -52,6 +52,7 @@ brew install rbenv
 brew install ack
 brew install dark-mode
 brew install git
+brew install lolcat
 brew install openssl
 brew install ssh-copy-id
 brew install stow

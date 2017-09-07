@@ -8,6 +8,7 @@ path=(
   /usr/local/opt/coreutils/libexec/gnubin
   /usr/local/opt/moreutils/libexec/gnubin
   /usr/local/opt/findutils/libexec/gnubin
+  $HOME/.rbenv/bin
   $path
 )
 
