@@ -1,6 +1,6 @@
+ZSH=~/.zsh
 zmodload zsh/zprof
-
-# skip_global_compinit=1
+skip_global_compinit=1
 export ZPLUG_HOME="${HOME}/.zplug"
 
 # Check if zplug is installed
@@ -28,8 +28,8 @@ zplug "lukechilds/zsh-nvm"
 
 zplug "lib/completion", from:oh-my-zsh
 
-# Choose a theme
-zplug 'sfabrizio/ozono-zsh-theme', as:theme
+# zplug 'denysdovhan/spaceship-zsh-theme', as:theme
+# zplug 'sfabrizio/ozono-zsh-theme', as:theme
 # zplug 'dracula/zsh', as:theme
 # zplug "eendroroy/alien"
 
@@ -44,9 +44,12 @@ if zplug check "zsh-users/zsh-history-substring-search"; then
     bindkey '^[[B' history-substring-search-down
 fi
 
-
 # Load extra configs
 for config (~/.zsh/*.zsh) source $config
+
+# Load theme
+ZSH_THEME=custom
+source "${ZSH}/theme/${ZSH_THEME}.zsh"
 
 # rbenv
 eval "$(rbenv init -)"
