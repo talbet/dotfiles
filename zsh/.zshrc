@@ -53,3 +53,6 @@ source "${ZSH}/theme/${ZSH_THEME}.zsh"
 
 # rbenv
 eval "$(rbenv init -)"
+
+# thefuck setup
+eval $(thefuck --alias)

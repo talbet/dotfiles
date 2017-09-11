@@ -15,3 +15,6 @@ path=(
 # preferred editor for local and remote sessions
 export EDITOR=vim
 export VISUAL=vim
+
+# set language
+export LC_ALL=en_AU.UTF-8

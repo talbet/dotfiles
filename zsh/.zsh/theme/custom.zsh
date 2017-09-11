@@ -12,8 +12,10 @@ CUSTOM_THEME_NVM_SUFFIX="%{$fg_bold[green]%})%{$reset_color%}"
 #final prompt separator:
 CUSTOM_THEME_PROMPT_FINAL="%{$FG[063]%}"'\uf0da'"%{$reset_color%}"
 
-CUSTOM_THEME_OK=$'🦉 '
-CUSTOM_THEME_CRASH='💥 '
+# CUSTOM_THEME_OK=$'🦉 '
+# CUSTOM_THEME_CRASH='💥 '
+CUSTOM_THEME_OK=$'>'
+CUSTOM_THEME_CRASH='*'
 CUSTOM_THEME_JS_ICON="%{$fg[yellow]%}"$'\ue74e'"%{$reset_color%}"
 
 #ok or wrong command
