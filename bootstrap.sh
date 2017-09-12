@@ -57,6 +57,7 @@ brew install openssl
 brew install ssh-copy-id
 brew install stow
 brew install svgo
+brew install thefuck
 brew install tree
 brew install youtube-dl
 

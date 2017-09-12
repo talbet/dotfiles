@@ -25,19 +25,12 @@ zplug "supercrabtree/k"
 zplug "rupa/z", use:z.sh
 zplug "lukechilds/zsh-nvm"
 # zplug "plugins/yarn", from:oh-my-zsh
-
 zplug "lib/completion", from:oh-my-zsh
-
-# zplug 'denysdovhan/spaceship-zsh-theme', as:theme
-# zplug 'sfabrizio/ozono-zsh-theme', as:theme
-# zplug 'dracula/zsh', as:theme
-# zplug "eendroroy/alien"
 
 # Install plugins if there are plugins that have not been installed
 zplug check || zplug install
 # Then, source plugins and add commands to $PATH
 zplug load
-
 
 if zplug check "zsh-users/zsh-history-substring-search"; then
     bindkey '^[[A' history-substring-search-up
@@ -56,3 +49,22 @@ eval "$(rbenv init -)"
 
 # thefuck setup
 eval $(thefuck --alias)
+
+##
+# Various
+##
+setopt auto_cd                  # if command is a path, cd into it
+setopt auto_remove_slash        # self explicit
+setopt chase_links              # resolve symlinks
+setopt correct                  # try to correct spelling of commands
+setopt extended_glob            # activate complex pattern globbing
+setopt glob_dots                # include dotfiles in globbing
+setopt print_exit_value         # print return value if non-zero
+unsetopt beep                   # no bell on error
+unsetopt bg_nice                # no lower prio for background jobs
+unsetopt clobber                # must use >| to truncate existing files
+unsetopt hist_beep              # no bell on error in history
+unsetopt hup                    # no hup signal at shell exit
+unsetopt ignore_eof             # do not exit on end-of-file
+unsetopt list_beep              # no bell on ambiguous completion
+unsetopt rm_star_silent         # ask for confirmation for `rm *' or `rm path/*'

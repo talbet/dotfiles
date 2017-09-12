@@ -17,4 +17,4 @@ export EDITOR=vim
 export VISUAL=vim
 
 # set language
-export LC_ALL=en_AU.UTF-8
+export LANG=en_AU.UTF-8
