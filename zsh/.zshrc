@@ -27,6 +27,9 @@ zplug "lukechilds/zsh-nvm"
 # zplug "plugins/yarn", from:oh-my-zsh
 zplug "lib/completion", from:oh-my-zsh
 
+# zplug "mreinhardt/sfz-prompt", as:theme
+# zplug 'dracula/zsh', as:theme
+
 # Install plugins if there are plugins that have not been installed
 zplug check || zplug install
 # Then, source plugins and add commands to $PATH

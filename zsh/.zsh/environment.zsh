@@ -9,6 +9,7 @@ path=(
   /usr/local/opt/moreutils/libexec/gnubin
   /usr/local/opt/findutils/libexec/gnubin
   $HOME/.rbenv/bin
+  $HOME/.rbenv/shims
   $path
 )
 
