@@ -3,7 +3,7 @@
 	name = Talbet Fulthorpe
 [core]
   autocrlf = false
-  editor = code
+	editor = code --wait
   excludesfile = ~/.gitignore_global
 [alias]
   # add
@@ -98,3 +98,7 @@
   default = current
 [fetch]
   prune = true
+[diff]
+  tool = vscode-diff
+[difftool "vscode-diff"]
+  cmd = code --wait --diff $LOCAL $REMOTE

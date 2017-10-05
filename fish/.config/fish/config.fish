@@ -25,8 +25,8 @@ switch $OS
 end
 
 # Set preferred editors and pagers
-set -gx EDITOR vim
-set -gx VISUAL vim
+set -gx EDITOR code
+set -gx VISUAL code
 set -gx PAGER less
 set -gx MANPAGER 'less -X'
 
@@ -102,7 +102,7 @@ set -g theme_display_ruby yes
 #set -g default_user your_normal_user
 #set -g fish_prompt_pwd_dir_length 0
 #set -g theme_project_dir_length 1
-#set -g theme_newline_cursor yes
+set -g theme_newline_cursor yes
 
 set -l black  111111
 set -l grey   333333
