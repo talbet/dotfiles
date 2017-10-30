@@ -77,8 +77,9 @@ fundle init
 
 # Theme options
 set -g theme_nerd_fonts yes
-set -g theme_color_scheme user
 set -g theme_display_ruby yes
+set -g theme_newline_cursor yes
+set -g theme_color_scheme terminal
 #set -g theme_display_git no
 #set -g theme_display_git_untracked no
 #set -g theme_display_git_ahead_verbose yes
@@ -102,39 +103,7 @@ set -g theme_display_ruby yes
 #set -g default_user your_normal_user
 #set -g fish_prompt_pwd_dir_length 0
 #set -g theme_project_dir_length 1
-set -g theme_newline_cursor yes
 
-set -l black  111111
-set -l grey   333333
-set -l red    CC9393
-set -l green  7F9F7F
-set -l yellow E3CEAB
-set -l orange DFAF8F
-set -l blue   8CD0D3
-set -l white  DCDCCC
-
-set __color_initial_segment_exit     $white $red --bold
-set __color_initial_segment_su       $white $green --bold
-set __color_initial_segment_jobs     $white $blue --bold
-
-set __color_path                     $white $black
-set __color_path_basename            $white $black --bold
-set __color_path_nowrite             $white $red
-set __color_path_nowrite_basename    $white $red --bold
-
-set __color_repo                     $green $grey
-set __color_repo_work_tree           $grey $grey --bold
-set __color_repo_dirty               $red $grey
-set __color_repo_staged              $yellow $grey
-
-set __color_vi_mode_default          $grey $yellow --bold
-set __color_vi_mode_insert           $green $white --bold
-set __color_vi_mode_visual           $yellow $grey --bold
-
-set __color_vagrant                  $blue $green --bold
-set __color_username                 $grey $blue
-set __color_rvm                      $red $grey --bold
-set __color_virtualfish              $blue $grey --bold
 
 # Source extra configs
 for f in $HOME/.config/fish/extra/*.fish;

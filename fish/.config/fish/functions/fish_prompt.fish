@@ -954,8 +954,8 @@ function fish_prompt -d 'bobthefish, a fish theme optimized for awesome'
       set __color_initial_segment_su       white green --bold
       set __color_initial_segment_jobs     white blue --bold
 
-      set __color_path                     black white
-      set __color_path_basename            black white --bold
+      set __color_path                     white black
+      set __color_path_basename            white black
       set __color_path_nowrite             magenta $colorfg
       set __color_path_nowrite_basename    magenta $colorfg --bold
 
@@ -970,7 +970,7 @@ function fish_prompt -d 'bobthefish, a fish theme optimized for awesome'
 
       set __color_vagrant                  brcyan $colorfg
       set __color_username                 white black
-      set __color_rvm                      brmagenta $colorfg --bold
+      set __color_rvm                      brred $colorfg --bold
       set __color_virtualfish              brblue $colorfg --bold
 
     case 'terminal-light*'
