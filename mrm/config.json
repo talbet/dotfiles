@@ -1,0 +1,12 @@
+{
+  "name": "Talbet Fulthorpe",
+  "email": "talbet.fulthorpe@gmail.com",
+  "indent": "2",
+  "readmeFile": "readme.md",
+  "licenseFile": "license.md",
+  "eslintPreset": "airbnb",
+  "eslintPeerDependencies": ["eslint-plugin-jsx-a11y", "eslint-plugin-react"],
+  "aliases": {
+    "node": ["license", "readme", "package", "editorconfig", "eslint", "gitignore"]
+  }
+}

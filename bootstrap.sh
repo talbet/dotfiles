@@ -70,7 +70,7 @@ brew cask install font-hasklig
 brew cask install font-source-code-pro
 brew cask install font-sourcecodepro-nerd-font
 
-# # Core casks
+# Core casks
 brew cask install 1password
 brew cask install awareness
 brew cask install bartender
@@ -78,6 +78,7 @@ brew cask install bettertouchtool
 brew cask install contexts
 brew cask install dash
 brew cask install flux
+brew cask install karabiner-elements
 brew cask install path-finder
 brew cask install spotify
 
@@ -85,14 +86,18 @@ brew cask install spotify
 brew cask install iterm2
 brew cask install visual-studio-code
 
-# # Misc casks
+# Misc casks
 brew cask install google-chrome
 brew cask install firefox
 brew cask install macdown
 brew cask install mplayerx
 brew cask install numi
 brew cask install slack
+brew cask install itsycal
+
+# Disk casks
 brew cask install dropbox
+brew cask install google-drive-file-stream
 
 # Remove outdated versions from the cellar.
 brew cleanup
