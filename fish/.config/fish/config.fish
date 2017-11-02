@@ -76,10 +76,12 @@ fundle plugin 'oh-my-fish/plugin-grc'
 fundle init
 
 # Theme options
+set -g theme_date_format "+%H:%M"
 set -g theme_nerd_fonts yes
 set -g theme_display_ruby yes
 set -g theme_newline_cursor yes
 set -g theme_color_scheme terminal
+set -g theme_newline_cursor no
 #set -g theme_display_git no
 #set -g theme_display_git_untracked no
 #set -g theme_display_git_ahead_verbose yes
