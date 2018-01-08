@@ -5,7 +5,7 @@
   "readmeFile": "readme.md",
   "licenseFile": "license.md",
   "eslintPreset": "airbnb",
-  "eslintPeerDependencies": ["eslint-plugin-jsx-a11y", "eslint-plugin-react"],
+  "eslintPeerDependencies": ["eslint-plugin-jsx-a11y", "eslint-plugin-react", "prettier", "eslint-plugin-prettier"],
   "aliases": {
     "node": ["license", "readme", "package", "editorconfig", "eslint", "gitignore"]
   }

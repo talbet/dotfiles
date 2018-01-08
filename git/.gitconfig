@@ -82,6 +82,17 @@
   delete-merged-branches = "!git checkout master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
   prune-against-remote = "!git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -d"
 
+  # from: https://gist.github.com/robmiller/6018582
+  # Get the current branch name (not so useful in itself, but used in other aliases)
+  branch-name = "!git rev-parse --abbrev-ref HEAD"
+  # Push the current branch to the remote "origin", and set it to track the upstream branch
+  publish = "!git push -u origin $(git branch-name)"
+  # Delete the remote version of the current branch
+  unpublish = "!git push origin :$(git branch-name)"
+  # Delete a branch and recreate it from master — useful if you have, say, a development branch and
+  # a master branch and they could conceivably go out of sync
+  recreate = "!f() { [[ -n $@ ]] && git checkout \"$@\" && git unpublish && git checkout master && git branch -D \"$@\" && git checkout -b \"$@\" && git publish; }; f"
+
 [color]
   ui = true
 [color "branch"]

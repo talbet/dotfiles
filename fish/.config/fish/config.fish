@@ -13,6 +13,9 @@ set -gx LC_CTYPE en_AU.UTF-8
 set -gx PATH /usr/local/bin /usr/bin /bin /usr/sbin /sbin $PATH
 set -gx MANPATH /usr/share/man $MANPATH
 
+# Don't lookup github repos with brew
+set -gx HOMEBREW_NO_GITHUB_API 1
+
 # OS specific paths
 switch $OS
 	case Darwin
@@ -111,3 +114,5 @@ set -g theme_newline_cursor no
 for f in $HOME/.config/fish/extra/*.fish;
 	source $f
 end
+# set -g fish_user_paths "/usr/local/opt/postgresql@9.6/bin" $fish_user_paths
+
