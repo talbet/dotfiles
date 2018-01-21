@@ -16,14 +16,15 @@ brew 'findutils'
 brew 'mas'
 brew 'zsh'
 brew 'fish'
+brew 'm-cli'
 
-# Ruby setup
+# Languages
 brew 'ruby-build'
 brew 'rbenv'
-
-# Python Setup
-# brew install python
-# brew install python3
+brew 'node'
+brew 'yarn'
+brew 'python'
+brew 'python3'
 
 # Utilities
 brew 'ack'
@@ -87,4 +88,6 @@ cask "caskroom/fonts/font-sourcecodepro-nerd-font-mono"
 
 mas 'Quiver', id: 866773894
 mas 'AntiRSI', id: 442007571
+mas 'Time Out', id: 402592703
 mas 'Tooth Fairy', id: 1191449274
+mas 'Airmail 3', id: 918858936
