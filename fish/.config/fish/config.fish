@@ -111,8 +111,11 @@ set -g theme_newline_cursor no
 
 
 # Source extra configs
-for f in $HOME/.config/fish/extra/*.fish;
-	source $f
+for file in $HOME/.config/fish/extra/*.fish;
+	source $file
 end
-# set -g fish_user_paths "/usr/local/opt/postgresql@9.6/bin" $fish_user_paths
+
+# Unicorn Ruby server needs this on MacOS High Sierra
+# See: https://blog.phusion.nl/2017/10/13/why-ruby-app-servers-break-on-macos-high-sierra-and-what-can-be-done-about-it/
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
