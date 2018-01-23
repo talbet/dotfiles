@@ -4,19 +4,34 @@
 # General                                                                     #
 ###############################################################################
 
+# Ask for the administrator password upfront
+sudo -v
+
 # Close any open System Preferences panes, to prevent them from overriding settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
 
 # Set the hostname
-sudo scutil --set HostName darwin-tf
+sudo scutil --set HostName "darwin-tf"
+sudo scutil --set ComputerName "darwin-tf"
+sudo scutil --set LocalHostName "darwin-tf"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "darwin-tf"
 
 # Disable guest access
 sudo defaults write /Library/Preferences/com.apple.AppleFileServer guestAccess -bool NO
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server AllowGuestAccess -bool NO
 sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool NO
 
+# Menu bar: disable transparency
+defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
+
+# Menu bar: hide the useless Time Machine and Volume icons
+defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/vpn.menu" "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
+
 # Show battery percent
 defaults write com.apple.menuextra.battery ShowPercent -bool true
+
+# Show the full clock
+defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM h:mm a"
 
 # Set sidebar icon size to medium
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
@@ -155,8 +170,8 @@ defaults write com.apple.finder ShowStatusBar -bool true
 # Show path bar
 defaults write com.apple.finder ShowPathbar -bool true
 
-# Display full POSIX path as Finder window title
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+# Display shortened path as Finder window title
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool false
 
 # Keep folders on top when sorting by name
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
@@ -292,13 +307,13 @@ defaults write com.apple.dock showhidden -bool true
 defaults write com.apple.dock wvous-tl-corner -int 0
 defaults write com.apple.dock wvous-tl-modifier -int 0
 # Top right screen corner
-defaults write com.apple.dock wvous-tr-corner -int 2
+defaults write com.apple.dock wvous-tr-corner -int 0
 defaults write com.apple.dock wvous-tr-modifier -int 0
 # Bottom left screen corner
-defaults write com.apple.dock wvous-bl-corner -int 4
+defaults write com.apple.dock wvous-bl-corner -int 0
 defaults write com.apple.dock wvous-bl-modifier -int 0
 # Bottom right screen corner
-defaults write com.apple.dock wvous-br-corner -int 3
+defaults write com.apple.dock wvous-br-corner -int 0
 defaults write com.apple.dock wvous-br-modifier -int 0
 
 ###############################################################################
@@ -439,9 +454,6 @@ defaults write com.apple.Terminal ShowLineMarks -int 0
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
-# Install the Solarized Dark theme for iTerm
-open "./iterm-themes/Gruvbox-Dark.itermcolors"
-
 ###############################################################################
 # Activity Monitor                                                            #
 ###############################################################################
@@ -534,17 +546,12 @@ for app in "Activity Monitor" \
 	"Contacts" \
 	"Dock" \
 	"Finder" \
-	"Google Chrome Canary" \
 	"Google Chrome" \
 	"Mail" \
 	"Messages" \
-	"Opera" \
 	"Photos" \
 	"Safari" \
-	"SizeUp" \
 	"SystemUIServer" \
-	"Terminal" \
-	"Transmission" \
 	"iCal"; do
 	killall "${app}" &> /dev/null
 done

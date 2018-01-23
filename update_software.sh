@@ -27,7 +27,7 @@ brew update
 brew upgrade
 
 # brew bundle check || brew bundle
-if [[ ! $(brew bundle check) ]]; then
+if [[ $(brew bundle check) ]]; then
   echo "Installing brews..."
   brew bundle
 fi
@@ -45,13 +45,13 @@ yarn global add mrm --silent
 # Add fish to the list of shells
 if [[ ! $(grep /usr/local/bin/fish /etc/shells) ]]; then
  echo "Adding fish to the list of allowed shells"
- echo "/usr/local/bin/fish" | sudo tee --append /etc/shells > /dev/null
+ echo "/usr/local/bin/fish" | sudo tee -a /etc/shells > /dev/null
 fi
 
 # Add zsh to the list of shells
 if [[ ! $(grep /usr/local/bin/zsh /etc/shells) ]]; then
  echo "Adding zsh to the list of allowed shells"
- echo "/usr/local/bin/zsh" | sudo tee --append /etc/shells > /dev/null
+ echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells > /dev/null
 fi
 
 # Change to the new shell if required
