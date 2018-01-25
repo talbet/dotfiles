@@ -29,6 +29,7 @@ brew 'python3'
 # Utilities
 brew 'ack'
 brew 'dark-mode'
+brew 'exa'
 brew 'fd'
 brew 'git'
 brew 'lolcat'

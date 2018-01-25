@@ -1,6 +1,6 @@
 alias l "ls -alF"
 alias ls "ls -hFG"
-alias ll "ls -lahF"
+alias ll "exa -lah --git"
 alias "cd.." "cd ../"
 alias up "cd ../"
 alias be "bundle exec"
