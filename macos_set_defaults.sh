@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# Get unique number from serial number
+Serial=system_profiler SPHardwareDataType | awk '/Serial/ {print $4}'
+ID=$((0x${Serial}))
+#Get name from names file
+Name=sed -n "${ID}p" ./names
+
 ###############################################################################
 # General                                                                     #
 ###############################################################################
@@ -11,9 +17,9 @@ sudo -v
 osascript -e 'tell application "System Preferences" to quit'
 
 # Set the hostname
-sudo scutil --set HostName "darwin-tf"
-sudo scutil --set ComputerName "darwin-tf"
-sudo scutil --set LocalHostName "darwin-tf"
+sudo scutil --set HostName $Name
+sudo scutil --set ComputerName $Name
+sudo scutil --set LocalHostName $Name
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "darwin-tf"
 
 # Disable guest access
@@ -82,8 +88,8 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
-# Enable “natural” scrolling
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
+# Enable 'classic' scrolling
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
