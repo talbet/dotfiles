@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# Get unique number from serial number
-Serial=system_profiler SPHardwareDataType | awk '/Serial/ {print $4}'
+# Get unique number from MAC address
+Serial=$(system_profiler SPHardwareDataType | awk '/Serial/ {print $4}' | md5 | tail -c 3)
 ID=$((0x${Serial}))
 #Get name from names file
-Name=sed -n "${ID}p" ./names
+Name=$(sed -n "${ID}p" ./names)
 
 ###############################################################################
 # General                                                                     #
