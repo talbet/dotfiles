@@ -14,7 +14,7 @@
   snapshots = !git stash list --grep snapshot
 
   #via http://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
-  recent-branches = !git for-each-ref --count=15 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+  recent = !git for-each-ref --count=15 --sort=-committerdate refs/heads/ --format='%(refname:short)'
 
   # branch
   b = branch -v                     # branch (verbose)
@@ -70,13 +70,6 @@
   # Assume all:
   assumeall = "!git st -s | awk {'print $2'} | xargs git assume"
 
-  # Get the current branch name (not so useful in itself, but used in other aliases)
-  branch-name = "!git rev-parse --abbrev-ref HEAD"
-  # Push the current branch to the remote "origin", and set it to track the upstream branch
-  publish = "!git push -u origin $(git branch-name)"
-  # Delete the remote version of the current branch
-  unpublish = "!git push origin :$(git branch-name)"
-
   # Delete any branches that have been merged into master
   # See also: https://gist.github.com/robmiller/5133264
   delete-merged-branches = "!git checkout master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
@@ -92,6 +85,10 @@
   # Delete a branch and recreate it from master — useful if you have, say, a development branch and
   # a master branch and they could conceivably go out of sync
   recreate = "!f() { [[ -n $@ ]] && git checkout \"$@\" && git unpublish && git checkout master && git branch -D \"$@\" && git checkout -b \"$@\" && git publish; }; f"
+  # connect an upstream branch if you forgot to publish
+  connect = "!git branch --set-upstream-to=origin/$(git branch-name)"
+  # reset a branch to the upstream commit
+  resetb = reset --hard @{u}
 
 [color]
   ui = true
