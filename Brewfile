@@ -50,6 +50,7 @@ brew 'youtube-dl'
 
 # Essentials
 cask '1password'
+cask 'alfred'
 cask 'awareness'
 cask 'bartender'
 cask 'bettertouchtool'
@@ -61,27 +62,39 @@ cask 'spotify'
 
 # Developer
 cask 'iterm2'
+cask 'hyper'
+cask 'rubymine'
 cask 'visual-studio-code'
+cask 'virtualbox'
 
 # Filesystem
 cask 'dropbox'
+
+# Work
+cask 'ccmenu'
 cask 'google-drive-file-stream'
+cask 'launchrocket'
 
 # Others
 cask 'google-chrome'
 cask 'firefox'
+cask 'opera'
 cask 'beaker-browser'
 cask 'macdown'
-cask 'mplayerx'
 cask 'numi'
 cask 'slack'
 cask 'itsycal'
 cask 'station'
+cask 'sip'
 cask 'keybase'
+cask 'vlc'
 
 # Fonts
 cask "caskroom/fonts/font-droidsansmono-nerd-font-mono"
 cask "caskroom/fonts/font-hasklig"
+cask "caskroom/fonts/font-hermit-nerd-font"
+cask "caskroom/fonts/font-hermit-nerd-font-mono"
+cask "caskroom/fonts/font-roboto-mono-for-powerline"
 cask "caskroom/fonts/font-source-code-pro"
 cask "caskroom/fonts/font-sourcecodepro-nerd-font-mono"
 
