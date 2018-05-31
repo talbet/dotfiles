@@ -70,7 +70,6 @@ end
 
 # Plugins
 
-fundle plugin 'edc/bass'
 fundle plugin 'decors/fish-colored-man'
 fundle plugin 'fisherman/getopts'
 fundle plugin 'fisherman/z'
