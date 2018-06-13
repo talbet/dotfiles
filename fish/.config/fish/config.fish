@@ -71,8 +71,10 @@ end
 # Plugins
 
 fundle plugin 'decors/fish-colored-man'
+fundle plugin 'edc/bass'
 fundle plugin 'fisherman/getopts'
 fundle plugin 'fisherman/z'
+fundle plugin 'fisherman/nvm'
 fundle plugin 'oh-my-fish/plugin-grc'
 
 fundle init
