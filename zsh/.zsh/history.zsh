@@ -10,4 +10,5 @@ setopt hist_reduce_blanks       # trim blanks
 setopt hist_verify              # show before executing history commands
 setopt share_history            # share hist between sessions
 setopt bang_hist                # !keyword
+setopt hist_ignore_dups         # don't write duplicates to history
 setopt extended_history
