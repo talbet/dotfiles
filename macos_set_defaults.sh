@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
 # Get unique number from MAC address
-Serial=$(system_profiler SPHardwareDataType | awk '/Serial/ {print $4}' | md5 | tail -c 3)
-ID=$((0x${Serial}))
+UNIQUE_BY_MAC=$(ifconfig en0 | awk '/ether/{print $2}'| cksum | cut -f1 -d" ")
+SELECTION_LENGTH=$(cat names | wc -l | xargs)
+ID=$(($UNIQUE_BY_MAC%$SELECTION_LENGTH))
 #Get name from names file
-Name=$(sed -n "${ID}p" ./names)
+Name=$(sed "${ID}q;d" ./names)
 
 ###############################################################################
 # General                                                                     #
@@ -17,10 +18,10 @@ sudo -v
 osascript -e 'tell application "System Preferences" to quit'
 
 # Set the hostname
-sudo scutil --set HostName $Name
-sudo scutil --set ComputerName $Name
-sudo scutil --set LocalHostName $Name
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "darwin-tf"
+sudo scutil --set HostName "$Name"
+sudo scutil --set ComputerName "$Name"
+sudo scutil --set LocalHostName "${Name//[[:blank:]]/}"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$Name"
 
 # Disable guest access
 sudo defaults write /Library/Preferences/com.apple.AppleFileServer guestAccess -bool NO
