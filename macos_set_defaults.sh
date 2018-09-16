@@ -5,7 +5,8 @@ UNIQUE_BY_MAC=$(ifconfig en0 | awk '/ether/{print $2}'| cksum | cut -f1 -d" ")
 SELECTION_LENGTH=$(cat names | wc -l | xargs)
 ID=$(($UNIQUE_BY_MAC%$SELECTION_LENGTH))
 #Get name from names file
-Name=$(sed "${ID}q;d" ./names)
+# Name=$(sed "${ID}q;d" ./names)
+Name="Dagobah"
 
 ###############################################################################
 # General                                                                     #
