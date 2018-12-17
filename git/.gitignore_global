@@ -20,3 +20,4 @@ tags
 
 # VSCode
 .vscode/*
+wallaby.conf.js
