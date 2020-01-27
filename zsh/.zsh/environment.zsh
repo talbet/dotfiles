@@ -19,5 +19,11 @@ path=(
 export EDITOR=vim
 export VISUAL=vim
 
+# Set editor default keymap to emacs (`-e`) or vi (`-v`)
+bindkey -v
+
+# Remove path separator from WORDCHARS.
+WORDCHARS=${WORDCHARS//[\/]}
+
 # set language
 export LANG=en_AU.UTF-8

@@ -28,6 +28,8 @@ unsetopt menu_complete        # do not autoselect the first completion entry
 # ===== Correction
 setopt correct                # spelling correction for commands
 setopt correctall             # spelling correction for arguments
+SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? ' # Customize spelling correction prompt.
+
 
 # ===== Prompt
 setopt prompt_subst           # Enable parameter expansion, command substitution, and arithmetic expansion in the prompt
