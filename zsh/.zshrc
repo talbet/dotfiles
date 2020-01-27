@@ -1,9 +1,6 @@
 # Change default zim location
+export ZDOTDIR=${HOME}/dotfiles/zsh
 export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
-
-# Start zim
-[[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh
-ZSH=~/.zsh
 
 # checks (stolen from zshuery)
 if [[ $(uname) = 'Linux' ]]; then

@@ -18,6 +18,7 @@
 
   # branch
   b = branch -v                     # branch (verbose)
+  bb = for-each-ref --sort=authordate --format '%(authordate:iso) %(align:left,25)%(refname:short)%(end) %(subject)' refs/heads
 
   # commit
   c = commit -m                     # commit with message

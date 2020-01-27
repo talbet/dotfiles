@@ -4,6 +4,7 @@ typeset -U path cdpath fpath manpath
 # paths
 path=(
   $home/bin
+  $home/.local/bin
   /usr/local/bin
   /usr/local/opt/coreutils/libexec/gnubin
   /usr/local/opt/moreutils/libexec/gnubin
