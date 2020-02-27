@@ -18,6 +18,7 @@ alias 'dus=du -sckx * | sort -nr' #directories sorted by size
 alias 'wordy=wc -w * | sort | tail -n10' # sort files in current directory by the number of words they contain
 alias 'filecount=find . -type f | wc -l' # number of files (not directories)
 
+#█▓▒░ z style nav
 alias a='fasd -a'        # any
 alias s='fasd -si'       # show / search / select
 alias d='fasd -d'        # directory
@@ -28,6 +29,9 @@ alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
 
 alias weather='noglob curl wttr.in/Melbourne?nFm' # show weather (https://wttr.in/:help)
+
+#█▓▒░ disable autocorrect
+alias yarn='nocorrect yarn'
 
 if [[ $IS_MAC -eq 1 ]]; then
     alias ql='qlmanage -p 2>/dev/null' # OS X Quick Look

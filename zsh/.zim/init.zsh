@@ -7,7 +7,7 @@ source /Users/talbet/dotfiles/zsh/.zim/modules/input/init.zsh
 source /Users/talbet/dotfiles/zsh/.zim/modules/termtitle/init.zsh
 source /Users/talbet/dotfiles/zsh/.zim/modules/utility/init.zsh
 source /Users/talbet/dotfiles/zsh/.zim/modules/fasd/init.zsh
-source /Users/talbet/dotfiles/zsh/.zim/modules/spaceship/spaceship.zsh
+source /Users/talbet/dotfiles/zsh/.zim/modules/powerlevel10k/powerlevel10k.zsh-theme
 source /Users/talbet/dotfiles/zsh/.zim/modules/zsh-completions/zsh-completions.plugin.zsh
 source /Users/talbet/dotfiles/zsh/.zim/modules/completion/init.zsh
 source /Users/talbet/dotfiles/zsh/.zim/modules/zsh-autosuggestions/zsh-autosuggestions.zsh
